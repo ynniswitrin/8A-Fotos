@@ -33,6 +33,7 @@
 					</button>
 				@endif
 
+
 				@if(\Auth::User() == $album->user)
 					<button class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Album löschen" id="btnDelete">
 						<span class="glyphicon glyphicon-trash"></span>
@@ -79,8 +80,8 @@
 			</div>
 		@endforeach
 	</div>
-	<hr>
 	<div id="addPhotos" class="hidden">
+	<hr>
 		<div class="row">
 			<div class="col-md-11">
 				<h3>Fotos Hinzufügen</h3>

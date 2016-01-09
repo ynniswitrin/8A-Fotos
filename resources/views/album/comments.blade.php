@@ -1,5 +1,6 @@
 <!-- COMMENTS -->
 @if($album->comments->isEmpty() == false or \Auth::check())
+	<hr>
 	<h2>Kommentare</h2>
 @endif
 
