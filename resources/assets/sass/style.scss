@@ -1,5 +1,10 @@
 $brand-primary: #6386D8;
 
+@font-face {
+    font-family: PH;
+    src: url(/build/fonts/PH.otf);
+}
+
 .row{
 	margin-bottom:30px;
 }
@@ -38,7 +43,6 @@ $brand-primary: #6386D8;
 	font-family: PH;
 	background-image: url(/build/img/8a.jpg);
 	background-size: cover;
-	//background-position: center;
 	
 }
 
