@@ -68,7 +68,7 @@ class PhotoController extends Controller
 		$photo->save();
 	}
 
-	private function savePhoto($photo, String $filename)
+	private function savePhoto($photo, $filename)
 	{
 		// Generate Thumbnails and move photos
 		$tnl = Image::make($photo);
