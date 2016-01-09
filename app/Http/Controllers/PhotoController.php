@@ -137,7 +137,7 @@ class PhotoController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$file_path = '/home/vagrant/Code/achta/public/storage';
+		$file_path = '/storage';
 
 		$photo = Photo::findOrFail($id);
 
