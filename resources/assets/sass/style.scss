@@ -1,10 +1,5 @@
 $brand-primary: #6386D8;
 
-@font-face {
-    font-family: PH;
-    src: url(/build/fonts/PH.otf);
-}
-
 .row{
 	margin-bottom:30px;
 }
@@ -40,7 +35,7 @@ $brand-primary: #6386D8;
 	color: white;
 	font-size: 300px;
 	line-height: 450px;
-	font-family: PH;
+	font-family: 'Coming Soon', cursive;
 	background-image: url(/build/img/8a.jpg);
 	background-size: cover;
 	
