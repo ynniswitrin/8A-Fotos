@@ -49,14 +49,13 @@ html{
 }
 
 
-.navLinks{
+.navMiddle, .navProfile{
 	display: flex;
 	justify-content: space-around;
 	height: 70px;
-	width: 200px;
 }
 
-.navLinks a{
+.navMiddle a, .navProfile a{
 	display: inline-block;
 	color: white;
 	border-radius: 20px;
@@ -67,27 +66,21 @@ html{
 	align-self: center;
 }
 
-.standardNav .navLinks a:hover{
+.standardNav .navMiddle a:hover{
 	color: white;
 	background-color: #2274A5;
 }
 
-.homeNav .navLinks a:hover{
-	color: #2274A5;
-	background-color: white;
-	text-decoration: none;
-}
-
-.mobileNav .navLinks{
+.mobileNav .navMiddle{
 	width: 100%;
 }
 
-.standardNav .navLinks a{
+.standardNav .navMiddle a{
 	color: #2274A5;
 	border: 3px solid #2274A5;
 }
 
-.mobileNav .navLinks a {
+.navProfile a, .mobileNav .navMiddle a {
 	width: 100px;
 	padding: 8px;
 	color: white;
@@ -95,16 +88,20 @@ html{
 	text-decoration: none;
 	text-align: center;
 }
-#createAlbum{
+
+.navWider{
 	width: 134px;
 }
 
-nav .glyphicon{
+
+nav .navMiddle .glyphicon{
 	display: block;
 	font-size: 18px;
 	text-align: center;
 	top: 0px;
 }
+
+
 
 /* HOMEPAGE */
 
@@ -126,14 +123,22 @@ nav .glyphicon{
 	.hero{
 		font-size: 250px;
 	}
+
+	.hero:before{
+		top: 140px;
+	}
 }
 
+@media(min-width:768px){
+	.hero:before{
+		top: 70px;
+	}
+}
 
 .hero:before{
 	content: '8A';
 	display: block;
 	position: absolute;
-	top: 70px;
 	left: 0;
 	width: 100%;
 	height: 450px;
@@ -141,31 +146,22 @@ nav .glyphicon{
 	background: linear-gradient(to bottom right, rgba(99,134,216,0.5) ,rgba(86,196,183,0.5));
 }
 
-
 .hero:hover{
 	color: white;
 }
 
 .featured{
 	width: 100%;
-	height: 300px; 
-	/*background-color: rgb(50,147,111);*/
-	background-color: rgb(86,196,183);
+	min-height: 300px; 
+	/*background-color: rgb(86,196,183);*/
+	background: linear-gradient(to bottom right, #6386D8, #56C4B7);
 	padding: 20px;
+	border-bottom: 1px solid white;
 }
 
-.featured h2, .allUsers h2{
+.featured h1, .allUsers h1{
 	margin: 0px 0px 15px;
 	color: white;
-}
-
-.carouselSlide{
-	display: flex;
-	justify-content: space-around;
-}
-
-.carousel-control{
-	background-image: none !important;
 }
 
 .layoutApp .navbar{
@@ -208,13 +204,21 @@ nav .glyphicon{
 }
 
 
+.albumPreview{
+	background-color: white;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
 
 .albumPreview a{
 	text-decoration: none;
 	color: rgb(51,51,51);
 }
 
-
+.albumPreview a h3{
+	margin-top: 0px;
+}
 
 .normalPanel{
 	margin-top: 60px;
@@ -231,6 +235,7 @@ nav .glyphicon{
 	height: 30px;
 	line-height: 30px;
 	border-bottom: 1px solid gray;
+	background-color: white;
 }
 
 .nextToTextfield{
@@ -239,9 +244,8 @@ nav .glyphicon{
 
 .allUsers{
 	width: 100%;
-	height: 300px; 
-	background-color: #A0E36D;
-	/*background-color: rgb(86,196,183);*/
+	min-height: 300px; 
+	background: linear-gradient(to bottom left, #56C4B7, #9EEA64);
 	padding: 20px;
 }
 

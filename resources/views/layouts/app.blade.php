@@ -15,6 +15,7 @@
 	<!-- Fonts -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
 
 	<!-- Styles -->
 	<link href="{{ elixir('css/app.css') }}" rel="stylesheet">
@@ -39,11 +40,18 @@
 		@include('layouts.mobile_nav')
 	</div>
 
+	@if(isset($home) AND $home == true)
 
-	<div class="container" id="layoutContainer">
 		@include('layouts.flash')
 		@yield('content')
-	</div>
+
+	@else
+		<div class="container" id="layoutContainer">
+			@include('layouts.flash')
+			@yield('content')
+		</div>
+	@endif
+	
 
 
 

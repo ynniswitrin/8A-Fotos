@@ -2,7 +2,7 @@
 	<div class="siteTitle">
 		<a href="/"> 8A Fotos</a>
 	</div>
-	<div class="navLinks">
+	<div class="navMiddle">
 		<a href="{{ url('/album') }}" >
 			Alle Alben
 		</a>
@@ -15,7 +15,7 @@
 			</a>
 		@endif
 		@if(\Auth::check())
-			<a href="{{ url('/album/create') }}" id=createAlbum>
+			<a href="{{ url('/album/create') }}" class="navWider">
 				Album hinzufügen
 			</a>
 			<a href="{{ url('/logout') }}">
