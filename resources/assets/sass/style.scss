@@ -1,69 +1,21 @@
+/* BASICS*/
+
 $brand-primary: #6386D8;
 
-.row{
-	margin-bottom:30px;
+body{
+	/*background-color: #2274A5;*/
+	background: linear-gradient(to bottom right, #6386D8, #56C4B7);
+	height: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
-.nextToHeading{
-	margin: 20px 0 20px;
+html{
+	height: 100%;
 }
 
-#formNameChange{
-	margin: 20px 0 10px;
-}
-.deletePhotos{
-	width: 100%;
-	margin-top: 10px;
-}
 
-.deletePhotos a{
-	margin: 0px auto;
-}
-
-.comment{
-	border: 1px solid #aaa;
-	padding: 0px 10px;
-	margin: 20px 0px;
-	border-radius: 10px;
-}
-
-.hero{
-	display: block;
-	width: 100%;
-	height: 450px; 
-	text-align: center;
-	color: white;
-	font-size: 300px;
-	line-height: 450px;
-	font-family: 'Coming Soon', cursive;
-	background-image: url(/build/img/8a.jpg);
-	background-size: cover;
-	
-}
-
-.hero:before{
-	content: '8A';
-	display: block;
-	position: absolute;
-	top: 70px;
-	left: 0;
-	width: 100%;
-	height: 450px;
-	/*background-color: rgba(86,196,183,0.5);*/
-	background: linear-gradient(to bottom right, rgba(99,134,216,0.5) ,rgba(86,196,183,0.5));
-}
-
-.hero:hover{
-	color: white;
-}
-
-.featured{
-	width: 100%;
-	height: 300px; 
-	/*background-color: rgb(50,147,111);*/
-	background-color: rgb(86,196,183);
-	padding: 20px;
-}
+/*NAVIGATION*/
 
 .homeNav{
 	width:100%;
@@ -71,6 +23,29 @@ $brand-primary: #6386D8;
 	background-color: #2274A5;
 	display: flex;
 	justify-content: space-around;
+}
+
+.siteTitle{
+	line-height: 70px;
+	font-size: 30px;
+	color: #2274A5;
+}
+
+.mobileNav .siteTitle{
+	text-align: center;
+}
+
+.standardNav, .mobileNav{
+	background-color: white;
+	width:100%;
+	min-height: 70px;
+	display: block;
+	justify-content: space-around;
+}
+
+.standardNav a{
+	text-decoration: none;
+	color: #2274A5;
 }
 
 
@@ -86,18 +61,43 @@ $brand-primary: #6386D8;
 	color: white;
 	border-radius: 20px;
 	width: 40px;
-	height: 40px;
+	min-height: 40px;
 	border: 3px solid white;
 	padding: 8px 0px;
 	align-self: center;
 }
 
-.navLinks a:hover{
+.standardNav .navLinks a:hover{
+	color: white;
+	background-color: #2274A5;
+}
+
+.homeNav .navLinks a:hover{
 	color: #2274A5;
 	background-color: white;
 	text-decoration: none;
 }
 
+.mobileNav .navLinks{
+	width: 100%;
+}
+
+.standardNav .navLinks a{
+	color: #2274A5;
+	border: 3px solid #2274A5;
+}
+
+.mobileNav .navLinks a {
+	width: 100px;
+	padding: 8px;
+	color: white;
+	background-color: #2274A5;
+	text-decoration: none;
+	text-align: center;
+}
+#createAlbum{
+	width: 134px;
+}
 
 nav .glyphicon{
 	display: block;
@@ -106,7 +106,55 @@ nav .glyphicon{
 	top: 0px;
 }
 
-.featured h2{
+/* HOMEPAGE */
+
+.hero{
+	display: block;
+	width: 100%;
+	height: 450px; 
+	text-align: center;
+	color: white;
+	font-size: 300px;
+	line-height: 450px;
+	font-family: 'Coming Soon', cursive;
+	background-image: url(/build/img/8a.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+@media(max-width:767px){
+	.hero{
+		font-size: 250px;
+	}
+}
+
+
+.hero:before{
+	content: '8A';
+	display: block;
+	position: absolute;
+	top: 70px;
+	left: 0;
+	width: 100%;
+	height: 450px;
+	/*background-color: rgba(86,196,183,0.5);*/
+	background: linear-gradient(to bottom right, rgba(99,134,216,0.5) ,rgba(86,196,183,0.5));
+}
+
+
+.hero:hover{
+	color: white;
+}
+
+.featured{
+	width: 100%;
+	height: 300px; 
+	/*background-color: rgb(50,147,111);*/
+	background-color: rgb(86,196,183);
+	padding: 20px;
+}
+
+.featured h2, .allUsers h2{
 	margin: 0px 0px 15px;
 	color: white;
 }
@@ -118,18 +166,6 @@ nav .glyphicon{
 
 .carousel-control{
 	background-image: none !important;
-}
-
-body{
-	/*background-color: #2274A5;*/
-	background: linear-gradient(to bottom right, #6386D8, #56C4B7);
-	height: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-html{
-	height: 100%;
 }
 
 .layoutApp .navbar{
@@ -145,38 +181,40 @@ html{
 	margin-bottom: 40px;
 }
 
+@media(max-width:767px){
+	.layoutApp #layoutContainer{
+		border-radius: 0px;
+	}
+}
+
+/**/
+.row{
+	margin-bottom:30px;
+}
+
+.nextToHeading{
+	margin: 20px 0 20px;
+}
+
+#formNameChange{
+	margin: 20px 0 10px;
+}
+
+.comment{
+	border: 1px solid #aaa;
+	padding: 0px 10px;
+	margin: 20px 0px;
+	border-radius: 10px;
+}
+
+
+
 .albumPreview a{
 	text-decoration: none;
 	color: rgb(51,51,51);
 }
 
-.standardNav{
-	background-color: white;
-	width:100%;
-	min-height: 70px;
-	display: block;
-	justify-content: space-around;
-}
 
-.standardNav .navLinks a{
-	color: #2274A5;
-	border: 3px solid #2274A5;
-}
-.standardNav a{
-	text-decoration: none;
-	color: #2274A5;
-}
-
-.navLinks a:hover{
-	color: white;
-	background-color: #2274A5;
-}
-
-.siteTitle{
-	line-height: 70px;
-	font-size: 30px;
-	color: #2274A5;
-}
 
 .normalPanel{
 	margin-top: 60px;
@@ -197,4 +235,124 @@ html{
 
 .nextToTextfield{
 	margin: 32px 0px;
+}
+
+.allUsers{
+	width: 100%;
+	height: 300px; 
+	background-color: #A0E36D;
+	/*background-color: rgb(86,196,183);*/
+	padding: 20px;
+}
+
+.contactTable h1{
+	margin: 40px 0px 40px 70px;
+}
+
+.tableIdentifier{
+	text-align: right;
+	font-size: 20px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	font-weight: normal;
+}
+
+@media(max-width:991px){
+	.tableIdentifier{
+		text-align: left;
+	}
+
+	.contactTable h1{
+		margin: 40px 0px;
+	}
+
+}
+
+
+@media(max-width:767px){
+	.contactCard{
+		display: table;
+		width: 100%;
+	}
+
+	.contactTable{
+		display: table-footer-group;
+	}
+
+	.contactPicture{
+		display: table-header-group;
+		text-align: center;
+	}
+
+}
+
+.tableData{
+	font-size: 16px;
+	min-height: 30px;
+	line-height: 30px;
+}
+
+.contactTable .row{
+	margin-bottom: 20px;
+}
+
+
+
+.allUsers a{
+	color: white;
+	font-size: 20px;
+	text-decoration: underline;
+	line-height: 45px;
+}
+
+.croppie-container{
+	display: none;
+}
+
+.upload-demo.ready .upload-result {
+	display: inline-block;    
+}
+
+.upload-msg {
+	text-align: center;
+	padding: 50px;
+	font-size: 22px;
+	color: #aaa;
+	width: 260px;
+	margin: 50px auto;
+	border: 1px solid #aaa;
+	cursor: pointer;
+}
+
+.gallery{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+}
+
+.item{
+	display: inline-block;
+	margin: 10px 0px;
+}
+
+.deletePhotos:before{
+	content: 'Löschen';
+	background-color: rgba(255,75,75,0.7);
+	display: block;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 6px;
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	line-height: 200px;
+	text-decoration: underline;
+}
+
+.deletePhotos:hover:before{
+	background-color: rgba(255,75,75,0.9)
 }

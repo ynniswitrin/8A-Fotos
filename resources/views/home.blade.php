@@ -6,15 +6,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>
-
-	8A.photos
-
+		8A Fotos
 	</title>
 
 	<!-- Fonts -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+	
 
 	<!-- Styles -->
 	<link href="{{ elixir('css/app.css') }}" rel="stylesheet">
@@ -58,7 +57,7 @@
 
 	<a class="hero" href="/album"></a>
 
-	<div class="featured">
+	<div class="featured hidden-xs hidden-sm">
 		<h2>Neueste Fotos</h2>
 
 	@if($photos->count() > 5)
@@ -75,7 +74,7 @@
 				<div class="row">
 					<div class="col-md-1"></div>			
 					@foreach($photos->chunk(3)->get(0) as $photo)
-						<div class="col-md-2 col-md-offset-1">
+						<div class="col-md-2 col-md-offset-1"> 
 							<img src="/storage/thumbnail_l/{{ $photo->filename }}" class="center-block img-rounded" >
 						</div>
 					@endforeach
@@ -107,6 +106,14 @@
 			Keine Fotos gefunden!!
 		@endif	
 	</div>
+	<div class="allUsers">
+		<h2>Alle registrierten Nutzer:</h2>
+
+				@foreach($users as $user)
+					<img src="/storage/profile_picture/thumbnail/{{ $user->profile_picture }}" width="30px">
+					<a href="/profile/{{ $user->id }}">{{ $user->name }}</a> <br>
+				@endforeach
+	</div>
 		
 
 	<footer class="footerHome">Paul Eberstaller &mdash; 2016</footer>
@@ -119,6 +126,7 @@
 		});
 
    </script>
+   <script src="croppie.js"></script>
 
 </body>
 </html>

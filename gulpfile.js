@@ -20,8 +20,8 @@ elixir(function(mix) {
 			'jquery.min.js',
 			'bootstrap.min.js',
 			'dropzone.js',
-			'dropzoneconfig.js',
 			'delete.js',
+			'croppie.js'
 		])
 	   .version([
 			'css/app.css',

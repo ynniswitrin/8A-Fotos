@@ -1,3 +1,9 @@
+Dropzone.options.photoupload ={
+	maxFilesize: 4, 
+	acceptedFiles: "image/*",
+	dictDefaultMessage: "Fotos hier her ziehen, um sie hinzuzufügen"
+};
+
 $(function(){
 	$(window).keydown(function(event){
     	if(event.keyCode == 13) {
@@ -6,7 +12,6 @@ $(function(){
     	}
   	});
 });
-
 
 $(function() {
 	$("#submitbutton").click(function() {

@@ -16,12 +16,16 @@ Route::group(['middleware' => ['web']], function () {
 	Route::resource('photo', 'PhotoController');
 	Route::resource('album', 'AlbumController');
 	Route::resource('comment', 'CommentController');
+	Route::resource('profile', 'ProfileController');
+	Route::get('profile/{id}/picture', 'ProfileController@picture');
+	Route::post('profile/{id}/picture', 'ProfileController@savePicture');
 
 	Route::get('/', function () {
 			
 		$photos = App\Photo::orderBy('created_at', 'desc')->limit(6)->get();
+		$users = App\User::all();
 
-		return view('home', ['photos' => $photos]);
+		return view('home', ['photos' => $photos, 'users' => $users]);
 	});
 
 

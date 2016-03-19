@@ -8,7 +8,7 @@ Exemples :
 
 (function() {
  
-  var laravel = {
+  laravel = {
     initialize: function() {
       this.methodLinks = $('a[data-method]');
       this.token = $('a[data-token]');
@@ -72,7 +72,5 @@ Exemples :
                  .appendTo('body');
     }
   };
- 
-  laravel.initialize();
- 
+  
 })();

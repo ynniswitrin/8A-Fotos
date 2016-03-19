@@ -137,8 +137,10 @@ class PhotoController extends Controller
 	 */
 	public function destroy($id)
 	{
-		$file_path = '/var/www/html/storage';
+		//$file_path = '/var/www/html/storage';
 
+		$file_path = 'storage/';
+		
 		$photo = Photo::findOrFail($id);
 
 	if(\Auth::user() == $photo->user){
