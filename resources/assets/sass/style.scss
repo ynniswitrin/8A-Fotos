@@ -1,31 +1,110 @@
+/* BASICS*/
+
 $brand-primary: #6386D8;
 
-.row{
-	margin-bottom:30px;
+body{
+	/*background-color: #2274A5;*/
+	background: linear-gradient(to bottom right, #6386D8, #56C4B7);
+	height: 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
-.nextToHeading{
-	margin: 20px 0 20px;
+html{
+	height: 100%;
 }
 
-#formNameChange{
-	margin: 20px 0 10px;
+
+/*NAVIGATION*/
+
+.homeNav{
+	width:100%;
+	min-height: 70px;
+	background-color: #2274A5;
+	display: flex;
+	justify-content: space-around;
 }
-.deletePhotos{
+
+.siteTitle{
+	line-height: 70px;
+	font-size: 30px;
+	color: #2274A5;
+}
+
+.mobileNav .siteTitle{
+	text-align: center;
+}
+
+.standardNav, .mobileNav{
+	background-color: white;
+	width:100%;
+	min-height: 70px;
+	display: block;
+	justify-content: space-around;
+}
+
+.standardNav a{
+	text-decoration: none;
+	color: #2274A5;
+}
+
+
+.navMiddle, .navProfile{
+	display: flex;
+	justify-content: space-around;
+	height: 70px;
+}
+
+.navMiddle a, .navProfile a{
+	display: inline-block;
+	color: white;
+	border-radius: 20px;
+	
+	min-height: 40px;
+	border: 3px solid white;
+	padding: 8px 0px;
+	align-self: center;
+}
+
+.standardNav .navMiddle a{
+	width: 40px;
+}
+
+.standardNav .navMiddle a:hover{
+	color: white;
+	background-color: #2274A5;
+}
+
+.mobileNav .navMiddle{
 	width: 100%;
-	margin-top: 10px;
 }
 
-.deletePhotos a{
-	margin: 0px auto;
+.standardNav .navMiddle a{
+	color: #2274A5;
+	border: 3px solid #2274A5;
 }
 
-.comment{
-	border: 1px solid #aaa;
-	padding: 0px 10px;
-	margin: 20px 0px;
-	border-radius: 10px;
+.navProfile a, .mobileNav .navMiddle a {
+	padding: 8px;
+	color: white;
+	background-color: #2274A5;
+	text-decoration: none;
+	text-align: center;
 }
+
+.navMiddle .glyphicon{
+	display: block;
+	font-size: 18px;
+	text-align: center;
+	top: 0px;
+}
+
+.navProfile .glyphicon{
+	margin: 0px 3px;
+}
+
+
+/* HOMEPAGE */
 
 .hero{
 	display: block;
@@ -38,14 +117,29 @@ $brand-primary: #6386D8;
 	font-family: 'Coming Soon', cursive;
 	background-image: url(/build/img/8a.jpg);
 	background-size: cover;
-	
+	background-position: center;
+}
+
+@media(max-width:767px){
+	.hero{
+		font-size: 250px;
+	}
+
+	.hero:before{
+		top: 140px;
+	}
+}
+
+@media(min-width:768px){
+	.hero:before{
+		top: 70px;
+	}
 }
 
 .hero:before{
 	content: '8A';
 	display: block;
 	position: absolute;
-	top: 70px;
 	left: 0;
 	width: 100%;
 	height: 450px;
@@ -59,77 +153,16 @@ $brand-primary: #6386D8;
 
 .featured{
 	width: 100%;
-	height: 300px; 
-	/*background-color: rgb(50,147,111);*/
-	background-color: rgb(86,196,183);
+	min-height: 300px; 
+	/*background-color: rgb(86,196,183);*/
+	background: linear-gradient(to bottom right, #6386D8, #56C4B7);
 	padding: 20px;
+	border-bottom: 1px solid white;
 }
 
-.homeNav{
-	width:100%;
-	min-height: 70px;
-	background-color: #2274A5;
-	display: flex;
-	justify-content: space-around;
-}
-
-
-.navLinks{
-	display: flex;
-	justify-content: space-around;
-	height: 70px;
-	width: 200px;
-}
-
-.navLinks a{
-	display: inline-block;
-	color: white;
-	border-radius: 20px;
-	width: 40px;
-	height: 40px;
-	border: 3px solid white;
-	padding: 8px 0px;
-	align-self: center;
-}
-
-.navLinks a:hover{
-	color: #2274A5;
-	background-color: white;
-	text-decoration: none;
-}
-
-
-nav .glyphicon{
-	display: block;
-	font-size: 18px;
-	text-align: center;
-	top: 0px;
-}
-
-.featured h2{
+.featured h1, .allUsers h1{
 	margin: 0px 0px 15px;
 	color: white;
-}
-
-.carouselSlide{
-	display: flex;
-	justify-content: space-around;
-}
-
-.carousel-control{
-	background-image: none !important;
-}
-
-body{
-	/*background-color: #2274A5;*/
-	background: linear-gradient(to bottom right, #6386D8, #56C4B7);
-	height: 100%;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-html{
-	height: 100%;
 }
 
 .layoutApp .navbar{
@@ -145,37 +178,82 @@ html{
 	margin-bottom: 40px;
 }
 
+@media(max-width:767px){
+	.layoutApp #layoutContainer{
+		border-radius: 0px;
+	}
+}
+
+/**/
+.row{
+	margin-bottom:30px;
+}
+
+.nextToHeading{
+	margin: 20px 0 20px;
+}
+
+#formNameChange{
+	margin: 20px 0 10px;
+}
+
+.comment{
+	/*border: 1px solid #aaa;*/
+	margin: 20px 0px;
+	border-radius: 10px;
+}
+
+.commentName{
+	height: 100%;
+	width: 100%;
+	color: white;
+	background-color: #2274A5;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	margin: 0px;
+	padding: 7px;
+}
+
+.commentName h4{
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.commentName .col-md-11{
+	padding: 0px;
+}
+
+.commentName a{
+	margin-top: 5px;
+}
+
+.commentBody{
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-left: 2px solid #2274A5;
+	border-right: 2px solid #2274A5;
+	border-bottom: 2px solid #2274A5;
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 10px;
+}
+
+
+.albumPreview{
+	background-color: white;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+}
+
 .albumPreview a{
 	text-decoration: none;
 	color: rgb(51,51,51);
 }
 
-.standardNav{
-	background-color: white;
-	width:100%;
-	min-height: 70px;
-	display: block;
-	justify-content: space-around;
-}
-
-.standardNav .navLinks a{
-	color: #2274A5;
-	border: 3px solid #2274A5;
-}
-.standardNav a{
-	text-decoration: none;
-	color: #2274A5;
-}
-
-.navLinks a:hover{
-	color: white;
-	background-color: #2274A5;
-}
-
-.siteTitle{
-	line-height: 70px;
-	font-size: 30px;
-	color: #2274A5;
+.albumPreview a h3{
+	margin-top: 0px;
 }
 
 .normalPanel{
@@ -193,8 +271,128 @@ html{
 	height: 30px;
 	line-height: 30px;
 	border-bottom: 1px solid gray;
+	background-color: white;
 }
 
 .nextToTextfield{
 	margin: 32px 0px;
+}
+
+.allUsers{
+	width: 100%;
+	min-height: 300px; 
+	background: linear-gradient(to bottom left, #56C4B7, #9EEA64);
+	padding: 20px;
+}
+
+.contactTable h1{
+	margin: 40px 0px 40px 70px;
+}
+
+.tableIdentifier{
+	text-align: right;
+	font-size: 20px;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	font-weight: normal;
+}
+
+@media(max-width:991px){
+	.tableIdentifier{
+		text-align: left;
+	}
+
+	.contactTable h1{
+		margin: 40px 0px;
+	}
+
+}
+
+
+@media(max-width:767px){
+	.contactCard{
+		display: table;
+		width: 100%;
+	}
+
+	.contactTable{
+		display: table-footer-group;
+	}
+
+	.contactPicture{
+		display: table-header-group;
+		text-align: center;
+	}
+
+}
+
+.tableData{
+	font-size: 16px;
+	min-height: 30px;
+	line-height: 30px;
+}
+
+.contactTable .row{
+	margin-bottom: 20px;
+}
+
+
+
+.allUsers a{
+	color: white;
+	font-size: 20px;
+	text-decoration: underline;
+	line-height: 45px;
+}
+
+.croppie-container{
+	display: none;
+}
+
+.upload-demo.ready .upload-result {
+	display: inline-block;    
+}
+
+.upload-msg {
+	text-align: center;
+	padding: 50px;
+	font-size: 22px;
+	color: #aaa;
+	width: 260px;
+	margin: 50px auto;
+	border: 1px solid #aaa;
+	cursor: pointer;
+}
+
+.gallery{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: space-around;
+}
+
+.item{
+	display: inline-block;
+	margin: 10px 0px;
+}
+
+.deletePhotos:before{
+	content: 'Löschen';
+	background-color: rgba(255,75,75,0.7);
+	display: block;
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 6px;
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	line-height: 200px;
+	text-decoration: underline;
+}
+
+.deletePhotos:hover:before{
+	background-color: rgba(255,75,75,0.9)
 }

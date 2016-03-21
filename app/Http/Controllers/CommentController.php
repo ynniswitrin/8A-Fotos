@@ -63,7 +63,7 @@ class CommentController extends Controller
      */
     public function show($id)
     {
-        //
+        return "Du solltest eigentlich nicht hier sein ! - ich war zu faul, den Kommentar zu löschen";
     }
 
     /**

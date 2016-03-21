@@ -60,42 +60,36 @@
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	
-	<div id="lightgallery">
-		@foreach($album->photos->chunk(4) as $chunk)
-			<div class="row">			
-				@foreach($chunk as $photo)
-					<div class="col-md-3">
-						<a href="/storage/photo/{{ $photo->filename }}" class="item">
-							<img src="/storage/thumbnail_l/{{ $photo->filename }}" class="img-rounded" />
-						</a>
-						@if(\Auth::user() == $photo->user)
-							<div class="deletePhotos hidden">
-								<a href="/photo/{{ $photo->id }}" data-method="delete" data-token="{{csrf_token()}}" class="btn btn-danger">
-									<span class="glyphicon glyphicon-trash"></span>
-								</a>
-							</div>
-						@endif
-					</div>
-				@endforeach
-			</div>
-		@endforeach
+	<div id="lightgallery" class="gallery"> 
+	@foreach($album->photos as $photo)
+			@if(\Auth::User() == $photo->user)
+				<a href="/storage/photo/{{ $photo->filename }}" class="item deletable" data-delete="/photo/{{ $photo->id }}" data-token="{{csrf_token()}}">
+			@else
+				<a href="/storage/photo/{{ $photo->filename }}" class="item">			
+			@endif
+				<img src="/storage/thumbnail_l/{{ $photo->filename }}" class="img-rounded" />
+			</a>
+	@endforeach
 	</div>
-	<div id="addPhotos" class="hidden">
-	<hr>
-		<div class="row">
-			<div class="col-md-11">
-				<h3>Fotos Hinzufügen</h3>
-			</div>
-			<div class="col-md-1 nextToHeading" >
-				<span class="glyphicon glyphicon-remove" id="closeUpload"></span>
-			</div>
-		</div>
-		<form id="photoupload" action="/photo" class="dropzone" method="POST"> 
-			{{ csrf_field() }}
-			<input type="text" name="_id" hidden value="{{ $album->id }}">
-		</form>
+		
+	@if(\Auth::check())
+		<div id="addPhotos" class="hidden">
 		<hr>
-	</div>
+			<div class="row">
+				<div class="col-md-11">
+					<h3>Fotos Hinzufügen</h3>
+				</div>
+				<div class="col-md-1 nextToHeading" >
+					<span class="glyphicon glyphicon-remove" id="closeUpload"></span>
+				</div>
+			</div>
+			<form id="photoupload" action="/photo" class="dropzone" method="POST"> 
+				{{ csrf_field() }}
+				<input type="text" name="_id" hidden value="{{ $album->id }}">
+			</form>
+			<hr>
+		</div>
+	@endif
 
 	@include('album.comments')
 	
