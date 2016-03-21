@@ -6848,13 +6848,15 @@ html {
   display: inline-block;
   color: white;
   border-radius: 20px;
-  width: 40px;
   min-height: 40px;
   border: 3px solid white;
   padding: 8px 0px;
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center; }
+
+.standardNav .navMiddle a {
+  width: 40px; }
 
 .standardNav .navMiddle a:hover {
   color: white;
@@ -6868,21 +6870,20 @@ html {
   border: 3px solid #2274A5; }
 
 .navProfile a, .mobileNav .navMiddle a {
-  width: 100px;
   padding: 8px;
   color: white;
   background-color: #2274A5;
   text-decoration: none;
   text-align: center; }
 
-.navWider {
-  width: 134px; }
-
-nav .navMiddle .glyphicon {
+.navMiddle .glyphicon {
   display: block;
   font-size: 18px;
   text-align: center;
   top: 0px; }
+
+.navProfile .glyphicon {
+  margin: 0px 3px; }
 
 /* HOMEPAGE */
 .hero {
@@ -6959,10 +6960,40 @@ nav .navMiddle .glyphicon {
   margin: 20px 0 10px; }
 
 .comment {
-  border: 1px solid #aaa;
-  padding: 0px 10px;
+  /*border: 1px solid #aaa;*/
   margin: 20px 0px;
   border-radius: 10px; }
+
+.commentName {
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: #2274A5;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0px;
+  padding: 7px; }
+
+.commentName h4 {
+  margin-left: 10px;
+  font-size: 20px; }
+
+.commentName .col-md-11 {
+  padding: 0px; }
+
+.commentName a {
+  margin-top: 5px; }
+
+.commentBody {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 2px solid #2274A5;
+  border-right: 2px solid #2274A5;
+  border-bottom: 2px solid #2274A5;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 10px; }
 
 .albumPreview {
   background-color: white;

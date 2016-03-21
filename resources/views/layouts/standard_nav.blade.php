@@ -12,18 +12,18 @@
 	<div class="navProfile col-md-3 col-md-offset-2 col-sm-4">
 		@if(\Auth::guest())
 			<a href="{{ url('/login') }}">
-				<span class="glyphicon glyphicon-log-in"></span>Login
+				<span class="glyphicon glyphicon-log-in"> </span> Login
 			</a>
-			<a href="{{ url('/register') }}" class="navWider">
+			<a href="{{ url('/register') }}">
 				<span class="glyphicon glyphicon-copy"> </span> Registrieren
 			</a>
 		@endif
 		@if(\Auth::check())
-			<a href="{{ url('/logout') }}" >
-				<span class="glyphicon glyphicon-log-out" ></span>Logout
-			</a>
 			<a href="{{ url('/profile/' . \Auth::User()->id) }}">
-				<span class="glyphicon glyphicon-user" ></span>Profil
+				<span class="glyphicon glyphicon-user"> </span> Profil
+			</a>
+			<a href="{{ url('/logout') }}" >
+				<span class="glyphicon glyphicon-log-out"> </span> Logout
 			</a>
 		@endif
 	</div>

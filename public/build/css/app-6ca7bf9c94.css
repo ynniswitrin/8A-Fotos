@@ -6835,21 +6835,19 @@ html {
   text-decoration: none;
   color: #2274A5; }
 
-.navLinks {
+.navMiddle, .navProfile {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: space-around;
   -ms-flex-pack: distribute;
   justify-content: space-around;
-  height: 70px;
-  width: 200px; }
+  height: 70px; }
 
-.navLinks a {
+.navMiddle a, .navProfile a {
   display: inline-block;
   color: white;
   border-radius: 20px;
-  width: 40px;
   min-height: 40px;
   border: 3px solid white;
   padding: 8px 0px;
@@ -6857,38 +6855,35 @@ html {
   -ms-flex-item-align: center;
   align-self: center; }
 
-.standardNav .navLinks a:hover {
+.standardNav .navMiddle a {
+  width: 40px; }
+
+.standardNav .navMiddle a:hover {
   color: white;
   background-color: #2274A5; }
 
-.homeNav .navLinks a:hover {
-  color: #2274A5;
-  background-color: white;
-  text-decoration: none; }
-
-.mobileNav .navLinks {
+.mobileNav .navMiddle {
   width: 100%; }
 
-.standardNav .navLinks a {
+.standardNav .navMiddle a {
   color: #2274A5;
   border: 3px solid #2274A5; }
 
-.mobileNav .navLinks a {
-  width: 100px;
+.navProfile a, .mobileNav .navMiddle a {
   padding: 8px;
   color: white;
   background-color: #2274A5;
   text-decoration: none;
   text-align: center; }
 
-#createAlbum {
-  width: 134px; }
-
-nav .glyphicon {
+.navMiddle .glyphicon {
   display: block;
   font-size: 18px;
   text-align: center;
   top: 0px; }
+
+.navProfile .glyphicon {
+  margin: 0px 3px; }
 
 /* HOMEPAGE */
 .hero {
@@ -6906,13 +6901,18 @@ nav .glyphicon {
 
 @media (max-width: 767px) {
   .hero {
-    font-size: 250px; } }
+    font-size: 250px; }
+  .hero:before {
+    top: 140px; } }
+
+@media (min-width: 768px) {
+  .hero:before {
+    top: 70px; } }
 
 .hero:before {
   content: '8A';
   display: block;
   position: absolute;
-  top: 70px;
   left: 0;
   width: 100%;
   height: 450px;
@@ -6924,25 +6924,15 @@ nav .glyphicon {
 
 .featured {
   width: 100%;
-  height: 300px;
-  /*background-color: rgb(50,147,111);*/
-  background-color: #56c4b7;
-  padding: 20px; }
+  min-height: 300px;
+  /*background-color: rgb(86,196,183);*/
+  background: linear-gradient(to bottom right, #6386D8, #56C4B7);
+  padding: 20px;
+  border-bottom: 1px solid white; }
 
-.featured h2, .allUsers h2 {
+.featured h1, .allUsers h1 {
   margin: 0px 0px 15px;
   color: white; }
-
-.carouselSlide {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
-
-.carousel-control {
-  background-image: none !important; }
 
 .layoutApp .navbar {
   border-radius: 0px;
@@ -6970,14 +6960,53 @@ nav .glyphicon {
   margin: 20px 0 10px; }
 
 .comment {
-  border: 1px solid #aaa;
-  padding: 0px 10px;
+  /*border: 1px solid #aaa;*/
   margin: 20px 0px;
+  border-radius: 10px; }
+
+.commentName {
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-color: #2274A5;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0px;
+  padding: 7px; }
+
+.commentName h4 {
+  margin-left: 10px;
+  font-size: 20px; }
+
+.commentName .col-md-11 {
+  padding: 0px; }
+
+.commentName a {
+  margin-top: 5px; }
+
+.commentBody {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 2px solid #2274A5;
+  border-right: 2px solid #2274A5;
+  border-bottom: 2px solid #2274A5;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 10px; }
+
+.albumPreview {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 20px;
   border-radius: 10px; }
 
 .albumPreview a {
   text-decoration: none;
   color: #333333; }
+
+.albumPreview a h3 {
+  margin-top: 0px; }
 
 .normalPanel {
   margin-top: 60px; }
@@ -6991,16 +7020,16 @@ nav .glyphicon {
   text-align: center;
   height: 30px;
   line-height: 30px;
-  border-bottom: 1px solid gray; }
+  border-bottom: 1px solid gray;
+  background-color: white; }
 
 .nextToTextfield {
   margin: 32px 0px; }
 
 .allUsers {
   width: 100%;
-  height: 300px;
-  background-color: #A0E36D;
-  /*background-color: rgb(86,196,183);*/
+  min-height: 300px;
+  background: linear-gradient(to bottom left, #56C4B7, #9EEA64);
   padding: 20px; }
 
 .contactTable h1 {
